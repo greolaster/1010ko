@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+            <title>Input Nilai</title>
+        </f:facet>
+
+        <f:facet name="middle">
+            <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+
+            <h:outputStylesheet name="css/dashboard.css" />
+            <h:outputStylesheet name="css/styles.css" />
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+
+            <h:outputScript name="bootstrap/js/bootstrap.js" />
+        </f:facet>
+
+        <f:facet name="last">
+            <h:outputStylesheet name="css/font-awesome.css" />
+        </f:facet>
+
+    </h:head>
+    <h:body>
+        <ui:include src="../templates/default/header.xhtml" />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ui:include src="../templates/default/leftMenu.xhtml" />
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <h:form>
+                        <p:growl id="msgs" showDetail="true" />
+
+                        <p:fieldset legend="Komplain" style="margin-bottom:20px">
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <p:dataTable var="car" value="#{dtBasicView.cars}">
+                                    <p:column headerText="NRP">
+                                        <h:outputText value="#{car.id}" />
+                                    </p:column>
+
+                                    <p:column headerText="Kode Matkul">
+                                        <h:outputText value="#{car.year}" />
+                                    </p:column>
+
+                                    <p:column headerText="Nilai">
+                                        <h:outputText value="#{car.brand}" />
+                                    </p:column>
+
+                                    <p:column headerText="Kelas">
+                                        <h:outputText value="#{car.color}" />
+                                    </p:column>
+                                    
+                                    <p:column headerText="Keterangan">
+                                        <h:outputText value="#{car.color}" />
+                                    </p:column>
+                                </p:dataTable>
+                            </h:panelGrid>
+                        </p:fieldset>
+
+                        <p:fieldset legend="Proses Komplain" style="margin-bottom:20px">
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <p:dataTable var="car" value="#{dtBasicView.cars}">
+                                    <p:column headerText="NRP">
+                                        <h:outputText value="#{car.id}" />
+                                    </p:column>
+
+                                    <p:column headerText="Kode Matkul">
+                                        <h:outputText value="#{car.year}" />
+                                    </p:column>
+
+                                    <p:column headerText="Nilai Awal">
+                                        <h:outputText value="#{car.brand}" />
+                                    </p:column>
+
+                                    <p:column headerText="Nilai Akhir">
+                                        <h:outputText value="#{car.color}" />
+                                    </p:column>
+                                    
+                                    <p:column headerText="Kelas">
+                                        <h:outputText value="#{car.color}" />
+                                    </p:column>
+                                    
+                                    <p:column headerText="Keterangan">
+                                        <h:outputText value="#{car.color}" />
+                                    </p:column>
+                                </p:dataTable>
+                            </h:panelGrid>
+                        </p:fieldset>
+
+
+                    </h:form>
+
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

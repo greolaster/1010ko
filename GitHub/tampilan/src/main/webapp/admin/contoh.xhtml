@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+            <title>Contoh</title>
+        </f:facet>
+
+        <f:facet name="middle">
+            <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+
+            <h:outputStylesheet name="css/dashboard.css" />
+            <h:outputStylesheet name="css/styles.css" />
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+
+            <h:outputScript name="bootstrap/js/bootstrap.js" />
+        </f:facet>
+
+        <f:facet name="last">
+            <h:outputStylesheet name="css/font-awesome.css" />
+        </f:facet>
+
+    </h:head>
+    <h:body>
+        <ui:include src="../templates/user/header.xhtml" />
+        <div class="container-fluid">
+            <div class="row">
+
+            </div>
+
+            <br/>
+            <div class="row">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:dataTable var="p" value="#{nilai.all}">
+                        <p:column headerText="id">
+                            <h:outputText value="#{p.id_nilai}" />
+                        </p:column>
+                        <p:column headerText="nrp">
+                            <h:outputText value="#{p.nrp}" />
+                        </p:column>
+
+                        <p:column headerText="kode">
+                            <h:outputText value="#{p.kode_matkul}" />
+                        </p:column>
+
+                        <p:column headerText="matkul">
+                            <h:outputText value="#{p.matkul}" />
+                        </p:column>
+
+                        <p:column headerText="kelas">
+                            <h:outputText value="#{p.kelas}" />
+                        </p:column>
+
+                        <p:column headerText="semester">
+                            <h:outputText value="#{p.semester}" />
+                        </p:column>
+
+                        <p:column headerText="sks">
+                            <h:outputText value="#{p.sks}" />
+                        </p:column>
+
+                        <p:column headerText="NILAI">
+                            <h:outputText value="#{p.nilai}" />
+                        </p:column>
+
+                        <p:column headerText="grade">
+                            <h:outputText value="#{p.grade}" />
+                        </p:column>
+
+                    </p:dataTable>
+                </h:panelGrid>
+            </div>
+        </div>
+    </h:body>
+</html>
+
