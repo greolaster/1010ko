@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+            <title>Input Nilai</title>
+        </f:facet>
+
+        <f:facet name="middle">
+            <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+
+            <h:outputStylesheet name="css/dashboard.css" />
+            <h:outputStylesheet name="css/styles.css" />
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+
+            <h:outputScript name="bootstrap/js/bootstrap.js" />
+        </f:facet>
+
+        <f:facet name="last">
+            <h:outputStylesheet name="css/font-awesome.css" />
+        </f:facet>
+
+    </h:head>
+    <h:body>
+        <ui:include src="../templates/default/header.xhtml" />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ui:include src="../templates/default/leftMenu.xhtml" />
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">                    
+                    <ui:insert name="content" /> 
+
+                    <p:layout >
+                        <p:layoutUnit position="west" resizable="true" size="270" minSize="140" maxSize="300" style="height: 270px;">
+                            <h:form>
+
+                                <p:multiSelectListbox value="#{multiSelectView.selection}" effect="slide">
+                                    <f:selectItems value="#{multiSelectView.categories}" />
+                                </p:multiSelectListbox>
+
+                                <p:commandButton value="Save" icon="ui-icon-check" update="out" style="display:block;margin:10px 0" />
+
+                                <h:outputText id="out" value="Value: #{multiSelectView.selection}" style="display:block" />
+                            </h:form>
+                            <!--                                        <div class="row">
+                                                                        <div class="col-md-4">Fakultas</div>
+                                                                        <div class="col-md-8">
+                                                                            <select class="form-control">
+                                                                                <option value="">Teknik</option>
+                                                                                <option value="">Ekonomi</option>
+                                                                                <option value="">Hukum</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">Jurusan</div>
+                                                                        <div class="col-md-8">
+                                                                            <select class="form-control">
+                                                                                <option value="">Informatika</option>
+                                                                                <option value="">Pangan</option>
+                                                                                <option value="">Mesin</option>
+                                                                                <option value="">Planologi</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                            -->
+
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-4">Program</div>
+                                <div class="col-md-8">
+                                    <select class="form-control">
+                                        <option value="">Reguler</option>
+                                        <option value="">Karyawan</option>
+                                        <option value="">Kerjasama</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-4">Matakuliah</div>
+                                <div class="col-md-8">
+                                    <select class="form-control">
+                                        <option value="">Algoritma &amp; Pemograman I</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-4">Kelas</div>
+                                <div class="col-md-8">
+                                    <select class="form-control">
+                                        <option value="">A</option>
+                                        <option value="">B</option>
+                                        <option value="">C</option>
+                                        <option value="">D</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-4">Tahun</div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="inputTahun" placeholder="2015"/>
+                                </div> 
+                            </div>
+                            <br/>
+                            <center>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </center>
+                        </p:layoutUnit>
+
+                        <p:layoutUnit position="center">
+                            <div class="row">
+                                <div class="col-md-1">Nilai</div>
+                                <div class="col-md-3">
+                                    <select class="form-control">
+                                        <option value="">UTS</option>
+                                        <option value="">UAS</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <br/>
+                            <!--<div class="row col-md-12">-->
+                            <p:dataTable var="car" value="#{dtBasicView.cars}">
+                                <p:column headerText="No">
+                                    <h:outputText value="#{car.id}" />
+                                </p:column>
+
+                                <p:column headerText="NRP">
+                                    <h:outputText value="#{car.year}" />
+                                </p:column>
+
+                                <p:column headerText="Nama">
+                                    <h:outputText value="#{car.brand}" />
+                                </p:column>
+
+                                <p:column headerText="Kelas">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="Nilai">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+                            </p:dataTable>
+                            <!--</div>-->
+                        </p:layoutUnit>
+                    </p:layout>
+
+
+
+                </div> 
+                <!--tutup main-->
+            </div>
+        </div>
+    </h:body>
+</html>
+
