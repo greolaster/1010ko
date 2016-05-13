@@ -34,66 +34,105 @@
         <ui:include src="../templates/user/header.xhtml" />
         <div class="container-fluid">
             <div class="row">
-                
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ui:include src="../templates/user/leftMenu.xhtml" />
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <div class="row">
+                        <p:panelGrid style="margin-top:20px">
+                            <f:facet name="header">
+                                <p:row>
+                                    <p:column colspan="10">Biodata</p:column>
+                                </p:row>
+
+                            </f:facet>
+
+                            <p:row>
+                                <p:column rowspan="2">FOTO</p:column>
+                                <p:column style="background: #D8D8D8;">Mahasiswa</p:column>
+                                <p:column style="background: #FAFAFA;">NPM</p:column>
+                                <p:column>133040180</p:column>
+                                <p:column style="background: #FAFAFA;">Nama</p:column>
+                                <p:column>Tomi Bong</p:column>
+                                <p:column style="background: #FAFAFA;">Program</p:column>
+                                <p:column>Reguler</p:column>
+                                <p:column style="background: #FAFAFA;">Prodi</p:column>
+                                <p:column>Informatika</p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column style="background: #D8D8D8;">Akademik</p:column>
+                                <p:column style="background: #FAFAFA;">Tahun</p:column>
+                                <p:column>2013</p:column>
+                                <p:column style="background: #FAFAFA;">Status</p:column>
+                                <p:column>Aktif</p:column>
+                                <p:column style="background: #FAFAFA;">Total SKS</p:column>
+                                <p:column>89</p:column>
+                                <p:column style="background: #FAFAFA;">IPK</p:column>                               
+                                <p:column>3.5</p:column>                               
+                            </p:row>
+                        </p:panelGrid>
+                    </div> <br/><br/>
+                    <div class="row">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:dataTable var="car" value="#{dtBasicView.cars}">
+                                <p:column headerText="#">
+                                    <h:outputText value="#{car.id}" />
+                                </p:column>
+                                <p:column headerText="Kode">
+                                    <h:outputText value="#{car.id}" />
+                                </p:column>
+
+                                <p:column headerText="Matakuliah">
+                                    <h:outputText value="#{car.year}" />
+                                </p:column>
+
+                                <p:column headerText="Kelas">
+                                    <h:outputText value="#{car.brand}" />
+                                </p:column>
+
+                                <p:column headerText="SKS">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="UTS">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="UAS">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="TUGAS">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="PRAKTIKUM">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="KEHADIRAN">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="NILAI">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="GRADE">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+
+                                <p:column headerText="BOBOT">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+                            </p:dataTable>
+                        </h:panelGrid>
+                    </div>
+                </div>
             </div>
-            
+
             <br/>
-            <div class="row">
-                <h:panelGrid columns="2" cellpadding="5">
-                    <p:dataTable var="car" value="#{dtBasicView.cars}">
-                        <p:column headerText="#">
-                            <h:outputText value="#{car.id}" />
-                        </p:column>
-                        <p:column headerText="Kode">
-                            <h:outputText value="#{car.id}" />
-                        </p:column>
 
-                        <p:column headerText="Matakuliah">
-                            <h:outputText value="#{car.year}" />
-                        </p:column>
-
-                        <p:column headerText="Kelas">
-                            <h:outputText value="#{car.brand}" />
-                        </p:column>
-
-                        <p:column headerText="SKS">
-                            <h:outputText value="#{car.color}" />
-                        </p:column>
-
-                        <p:column headerText="UTS">
-                            <h:outputText value="#{car.color}" />
-                        </p:column>
-
-                        <p:column headerText="UAS">
-                            <h:outputText value="#{car.color}" />
-                        </p:column>
-
-                        <p:column headerText="TUGAS">
-                            <h:outputText value="#{car.color}" />
-                        </p:column>
-
-                        <p:column headerText="PRAKTIKUM">
-                            <h:outputText value="#{car.color}" />
-                        </p:column>
-
-                        <p:column headerText="KEHADIRAN">
-                            <h:outputText value="#{car.color}" />
-                        </p:column>
-
-                        <p:column headerText="NILAI">
-                            <h:outputText value="#{car.color}" />
-                        </p:column>
-
-                        <p:column headerText="GRADE">
-                            <h:outputText value="#{car.color}" />
-                        </p:column>
-
-                        <p:column headerText="BOBOT">
-                            <h:outputText value="#{car.color}" />
-                        </p:column>
-                    </p:dataTable>
-                </h:panelGrid>
-            </div>
         </div>
     </h:body>
 </html>

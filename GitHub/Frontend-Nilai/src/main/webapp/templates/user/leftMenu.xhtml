@@ -1,24 +1,23 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets">
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ul class="nav nav-sidebar">
-        <li class="active"><a href="#">Dashboard</a></li>
-        <li><a href="../admin/Pemberitahuan.xhtml">Pemberitahuan</a></li>
-        <li><a href="../admin/Komplain.xhtml">Komplain</a></li>
-        <li><a href="../admin/InputNilai.xhtml">Input Nilai</a></li>
-        <li><a href="../admin/PengaturanNilai.xhtml">Pengaturan Nilai</a></li>
-    </ul>
-<!--    <ul class="nav nav-sidebar">
-        <li><a href="">Pengaturan Nilai</a></li>
-        <li><a href="">Nav item again</a></li>
-        <li><a href="">One more nav</a></li>
-        <li><a href="">Another nav item</a></li>
-        <li><a href="">More navigation</a></li>
-    </ul>
-    <ul class="nav nav-sidebar">
-        <li><a href="">Nav item again</a></li>
-        <li><a href="">One more nav</a></li>
-        <li><a href="">Another nav item</a></li>
-    </ul>        -->
+
+    <p:panel id="sports" header="Menu" style="text-align: center ;">
+        <p:button  value="Branda" icon="ui-icon-home" style="width: 160px; margin-bottom:10px; margin-top: 10px;" >
+            <f:param name="productId" value="10" />
+        </p:button>
+        <p:button  value="Nilai" icon="ui-icon-book" style="width: 160px; margin-bottom:10px">
+            <f:param name="productId" value="10" />
+        </p:button>
+        <p:button  value="Riwayat Nilai" icon="ui-icon-clock" style="width: 160px; margin-bottom:10px">
+            <f:param name="productId" value="10" />
+        </p:button>
+        <p:button  value="Komplain" icon="ui-icon-clock" style="width: 160px; margin-bottom:10px">
+            <f:param name="productId" value="10" />
+        </p:button>
+    </p:panel>
 </ui:composition>
 
