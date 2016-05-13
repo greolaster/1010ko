@@ -49,11 +49,13 @@
                                         <div class="row">
                                             <div class="col-md-4">Fakultas</div>
                                             <div class="col-md-8">
-                                                <p:selectOneMenu value="#{fakultas}" style="width:125px">
+                                                <p:selectOneMenu value="#{fakultas}" style="width:125px" >
                                                     <f:selectItems var="f" 
                                                                    value="#{fakultas.all}" 
                                                                    itemLabel="#{f.nama_fakultas}" 
-                                                                   itemValue="#{f.kode_fakultas}" />
+                                                                   itemValue="#{f.kode_fakultas}" 
+                                                                   />
+                                                    <f:param name="x" value="#{f.kode_fakultas}"/>
                                                 </p:selectOneMenu>
                                             </div>
                                         </div>
