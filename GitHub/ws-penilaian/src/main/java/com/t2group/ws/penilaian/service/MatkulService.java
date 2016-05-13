@@ -19,7 +19,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/matkul")
-public class MatkulController extends MasterConnection {
+public class MatkulService extends MasterConnection {
 
     @GET
     @Path("/{kode_matkul}")
